@@ -1,0 +1,31 @@
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {
+    height: auto;
+  }
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 100%;
+  /* overflow: auto; */
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+}
+
+.border-superthick {
+  border-width: 1.5px !important;
+  border-style: dotted;
+}
+
+.impactfont {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
