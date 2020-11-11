@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/dunder_mifflin/static/css/main.3322ffa9.chunk.css",
+    "main.js": "/dunder_mifflin/static/js/main.be7339f6.chunk.js",
+    "main.js.map": "/dunder_mifflin/static/js/main.be7339f6.chunk.js.map",
+    "runtime-main.js": "/dunder_mifflin/static/js/runtime-main.10313cdc.js",
+    "runtime-main.js.map": "/dunder_mifflin/static/js/runtime-main.10313cdc.js.map",
+    "static/css/2.6414bb7b.chunk.css": "/dunder_mifflin/static/css/2.6414bb7b.chunk.css",
+    "static/js/2.8a5529d6.chunk.js": "/dunder_mifflin/static/js/2.8a5529d6.chunk.js",
+    "static/js/2.8a5529d6.chunk.js.map": "/dunder_mifflin/static/js/2.8a5529d6.chunk.js.map",
+    "index.html": "/dunder_mifflin/index.html",
+    "precache-manifest.affa90a12a1eddfaa2419890a73fb333.js": "/dunder_mifflin/precache-manifest.affa90a12a1eddfaa2419890a73fb333.js",
+    "service-worker.js": "/dunder_mifflin/service-worker.js",
+    "static/css/2.6414bb7b.chunk.css.map": "/dunder_mifflin/static/css/2.6414bb7b.chunk.css.map",
+    "static/css/main.3322ffa9.chunk.css.map": "/dunder_mifflin/static/css/main.3322ffa9.chunk.css.map",
+    "static/js/2.8a5529d6.chunk.js.LICENSE.txt": "/dunder_mifflin/static/js/2.8a5529d6.chunk.js.LICENSE.txt",
+    "static/media/dundee.jpg": "/dunder_mifflin/static/media/dundee.2530d53c.jpg",
+    "static/media/logo.jpg": "/dunder_mifflin/static/media/logo.1174c2c4.jpg",
+    "static/media/mcpaper.png": "/dunder_mifflin/static/media/mcpaper.514ea42c.png",
+    "static/media/movie.jpg": "/dunder_mifflin/static/media/movie.48d816dc.jpg",
+    "static/media/paper.jpg": "/dunder_mifflin/static/media/paper.91f030b1.jpg",
+    "static/media/volleyball.jpg": "/dunder_mifflin/static/media/volleyball.d6a09388.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10313cdc.js",
+    "static/css/2.6414bb7b.chunk.css",
+    "static/js/2.8a5529d6.chunk.js",
+    "static/css/main.3322ffa9.chunk.css",
+    "static/js/main.be7339f6.chunk.js"
+  ]
+}
