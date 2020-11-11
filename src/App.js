@@ -107,70 +107,45 @@ class App extends Component {
     console.log("Item Deleted")
   }
 
-  handleList_title = (event, listId) => {
-    var title = event.target.value;
+  handleList = (event, listId) => {
+    var tmp = event.target.value;
+    var id = event.target.id;
     const lists = [...this.state.lists]
-    lists[listId-1].title = title;
+    switch (id) {
+      case "title":
+        lists[listId-1].title = tmp;break;
+      case "priority":
+        lists[listId-1].priority = tmp;break;
+      case "deadline":
+        lists[listId-1].deadline = tmp; break;
+      case "text":
+        lists[listId-1].text = tmp; break;
+      default:
+        break;
+    }
+    console.log("List " + id + " changed.")
     this.setState({lists})
-    console.log("List Title Changed")
   }
 
-  handleList_priority = (event, listId) => {
-    var priority = event.target.value;
-    const lists = [...this.state.lists];
-    lists[listId-1].priority = priority;
-    this.setState({lists})
-    console.log("List Priority Changed")
-  }
-
-  handleList_deadline = (event, listId) => {
-    var deadline = event.target.value;
+  handleItem = (event, listId, itemId) => {
+    var tmp = event.target.value;
+    var id = event.target.id;
     const lists = [...this.state.lists]
-    lists[listId-1].deadline = deadline;
+    switch (id) {
+      case "title":
+        lists[listId-1].items[itemId-1].title = tmp; break;
+      case "priority":
+        lists[listId-1].items[itemId-1].priority = tmp; break;
+      case "deadline":
+        lists[listId-1].items[itemId-1].deadline = tmp; break;
+      case "text":
+        lists[listId-1].items[itemId-1].text = tmp; break;
+      default:
+        break;
+    }
+    console.log("Item " + id + " changed.")
     this.setState({lists})
-    console.log("List Deadline Changed")
   }
-
-  handleList_text = (event, listId) => {
-    var text = event.target.value;
-    const lists = [...this.state.lists]
-    lists[listId-1].text = text;
-    this.setState({lists})
-    console.log("List Text Changed")
-  }
-
-  handleItem_title = (event, listId, itemId) =>{
-    var title = event.target.value;
-    const lists = [...this.state.lists];
-    lists[listId-1].items[itemId-1].title = title;
-    this.setState({lists})
-    console.log("Item Title Changed")
-  }
-
-  handleItem_priority = (event, listId, itemId) =>{
-    var priority = event.target.value;
-    const lists = [...this.state.lists];
-    lists[listId-1].items[itemId-1].priority = priority;
-    this.setState({lists})
-    console.log("Item Priority Changed")
-  }
-
-  handleItem_deadline = (event, listId, itemId) =>{
-    var deadline = event.target.value;
-    const lists = [...this.state.lists];
-    lists[listId-1].items[itemId-1].deadline = deadline;
-    this.setState({lists})
-    console.log("Item Deadline Changed")
-  }
-
-  handleItem_text = (event, listId, itemId) =>{
-    var text = event.target.value;
-    const lists = [...this.state.lists];
-    lists[listId-1].items[itemId-1].text = text;
-    this.setState({lists})
-    console.log("Item Text Changed")
-  }
-
   render() {
     return (
       <div className="App">
@@ -181,7 +156,7 @@ class App extends Component {
               <p>{ this.state.time }</p>
               <hr/>
               <span className="font-weight-bold" role="img" aria-label="cake">All Employee Birthdays 🎂</span>
-              <ul className="list-group list-group-flush">
+              <ul className="card list-group list-group-flush rounded">
                 <li className="list-group-item">Michael Scott | 3/15/1965</li>
                 <li className="list-group-item">Jim Halpert | 10/1/1978</li>
                 <li className="list-group-item">Pam Beesly | 3/25/1979</li>
@@ -220,41 +195,35 @@ class App extends Component {
                       onDeleteList={this.deleteList}
                       onAddItem={this.addItem}
                       onDeleteItem={this.deleteItem}
-                      onhandleList_title={this.handleList_title}
-                      onhandleList_priority={this.handleList_priority}
-                      onhandleList_deadline={this.handleList_deadline}
-                      onhandleList_text={this.handleList_text}
-                      onhandleItem_title={this.handleItem_title}
-                      onhandleItem_priority={this.handleItem_priority}
-                      onhandleItem_deadline={this.handleItem_deadline}
-                      onhandleItem_text={this.handleItem_text}
+                      onHandleList={this.handleList}
+                      onHandleItem={this.handleItem}
                     />
                 )}
             </div>
             <div className="col-sm-2 sidenav">
-              <div className="well">
+              <div className="card">
                 <img src={paper} width="175" height="100" className="rounded m-4" alt="paperReam"/>
-                <span role="img" aria-label="paper">Paper Ream 📝 for $5.99</span>
+                <span className="my-1" role="img" aria-label="paper">Paper Ream 📝 for $5.99</span>
               </div>
               <hr/>
-              <div className="well">
+              <div className="card">
                 <img src={volleyball} width="175" height="100" className="rounded m-4" alt="volleyball"/>
-                <span role="img" aria-label="picnic">Company Picnic 🥪 and Volleyball Tournament 🏐 Comming Soon in Spring!</span>
+                <span className="my-1"role="img" aria-label="picnic">Company Picnic 🥪 and Volleyball Tournament 🏐 Comming Soon in Spring!</span>
               </div>
               <hr/>
-              <div className="well">
+              <div className="card">
                 <img src={dundee} width="175" height="100" className="rounded m-4" alt="dundee"/>
-                <span>Dundee photos are out! Ask Angela for link to album and for printed photos</span>
+                <span className="my-1">Dundee photos are out! Ask Angela for link to album and for printed photos</span>
               </div>
               <hr/>
-              <div className="well">
+              <div className="card">
                 <img src={mcpaper} width="175" height="100" className="rounded m-4" alt="mcpaper"/>
-                <span role="img" aria-label="pray">RIP 🙏</span>
+                <span className="my-1" role="img" aria-label="pray">RIP 🙏</span>
               </div>
               <hr/>
-              <div className="well">
+              <div className="card">
                 <img src={movie} width="175" height="100" className="rounded m-4" alt="movie"/>
-                <span role="img" aria-label="movie">Threat Level Midnight 🔫🕵️💥 Coming Soon in theatres near you</span>
+                <span className="my-1" role="img" aria-label="movie">Threat Level Midnight 🔫🕵️💥 Coming Soon in theatres near you</span>
               </div>
             </div>
           </div>

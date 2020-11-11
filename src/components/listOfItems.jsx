@@ -4,28 +4,26 @@ import json2csv from 'csvjson-json2csv/json2csv'
 
 class ListOfItems extends Component {
     render() { 
-        const { onDeleteList, onAddItem, onDeleteItem, items,
-            onhandleList_title, onhandleList_priority, onhandleList_deadline, onhandleList_text,
-            onhandleItem_title, onhandleItem_priority, onhandleItem_deadline, onhandleItem_text } = this.props;
+        const { onHandleList, onHandleItem, onDeleteList, onAddItem, onDeleteItem, items } = this.props;
         return ( 
             <div styles="" className="container border-dark border-superthick rounded m-2">
                 <div className="input-group mb-3 p-3">
                     <div className="input-group-prepend">
                         <span className="input-group-text bg-primary text-white">List #{ this.props.id }</span>
                     </div>
-                    <input type="text" value={this.props.title} onChange={e => onhandleList_title(e, this.props.id)} className="form-control" placeholder="List Title"/>
+                    <input type="text" id="title" value={this.props.title} onChange={e => onHandleList(e, this.props.id)} className="form-control" placeholder="List Title"/>
                     <div className="input-group-append">
-                        <select defaultValue={this.props.priority} onChange={e => onhandleList_priority(e, this.props.id)} className={this.priorityColor()}>
+                        <select defaultValue={this.props.priority} id="priority" onChange={e => onHandleList(e, this.props.id)} className={this.priorityColor()}>
                             <option value="0" disabled>Choose Priority...</option>
                             <option value="1">Low</option>
                             <option value="2">Medium</option>
                             <option value="3">High</option>
                         </select>
                     </div>  
-                    <input type="text" value={this.props.deadline} onChange={e => onhandleList_deadline(e, this.props.id)} className="form-control" placeholder="Deadline [Optional]"/>
+                    <input type="text" id="deadline" value={this.props.deadline} onChange={e => onHandleList(e, this.props.id)} className="form-control" placeholder="Deadline [Optional]"/>
 
                     <div className="w-100">
-                        <input type="text" value={this.props.text} onChange={e => onhandleList_text(e, this.props.id)} className="form-control" placeholder="Additional Text/Description [Optional]"/>
+                        <input type="text" id="text" value={this.props.text} onChange={e => onHandleList(e, this.props.id)} className="form-control" placeholder="Additional Text/Description [Optional]"/>
                     </div> 
                 </div> 
                 <div className="float-right" >
@@ -38,11 +36,8 @@ class ListOfItems extends Component {
                             priority={item.priority}
                             deadline={item.deadline}
                             text={item.text}
+                            onHandleItem={onHandleItem}
                             onDeleteItem={onDeleteItem}
-                            onhandleItem_title={onhandleItem_title}
-                            onhandleItem_priority={onhandleItem_priority}
-                            onhandleItem_deadline={onhandleItem_deadline}
-                            onhandleItem_text={onhandleItem_text}
                         />
                     )}
                 </div>
